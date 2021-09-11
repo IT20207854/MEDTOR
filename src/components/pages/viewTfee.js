@@ -6,7 +6,7 @@ const Tfee = props => (
     <tr>
         <td>{props.tfee._id}</td>
         <td>{props.tfee.name}</td>
-        <td>{props.tfee.month}</td>
+      
         <td>{props.tfee.date}</td>
         <td>{props.tfee.vaccineFee}</td>
         <td>{props.tfee.doseSize}</td>
@@ -55,15 +55,17 @@ export default class ViewTfee extends Component {
 
     render() {
         return (
-            <div className='viewTfee'>
-                <div className='container'>
-                    <h3>Patients' Vaccine Details</h3>
+            <div className='addCovidPage'>
+            <br />
+                <div className='container' id="viewTable">
+                    <h3 className="addcovid2Title">Patients' Vaccine Details</h3>
+                    <br/>
                     <table className="table">
                         <thead className="thead-light">
                             <tr>
                                 <th>Patient ID</th>
                                 <th>Patient Name</th>
-                                <th>Month</th>
+                           
                                 <th>Date</th>
                                 <th>Vaccine Fee</th>
                                 <th>Dose Size</th>
