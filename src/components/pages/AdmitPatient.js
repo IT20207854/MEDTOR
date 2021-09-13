@@ -121,7 +121,7 @@ export default class AdmitPatient extends Component {
       .then(res => console.log(res.data));
 
     alert("Successfull Add Patient Details")
-    window.location = '/managePatient';
+    window.location = '/patientList';
   }
   handleChange = event => {
     this.setState({ value: event.target.value });

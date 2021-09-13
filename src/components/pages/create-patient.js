@@ -155,7 +155,7 @@ export default class AddPatient extends Component {
         <br />
         <div className='container' id="createPatientForm">
           <form onSubmit={this.onSubmit}>
-            <h3 className="createPatientTitle">Add New Medicine</h3>
+            <h3 className="createPatientTitle">Add New Patient</h3>
             <br />
             <div className="form-group">
               <label>Customer Name: </label>
@@ -212,25 +212,10 @@ export default class AddPatient extends Component {
                   onChange={this.onChangeMadicineno2}
                 />
               </div>
-              <div class="col-50">
-                <h4>Madicine no</h4>
-                <input type="text"
-                  required
-                  className="form-control"
-                  value={this.state.madicine1}
-                  onChange={this.onChangeMadicine1}
-                />
-                <input type="text"
-                  required
-                  className="form-control"
-                  value={this.state.madicine2}
-                  onChange={this.onChangeMadicine2}
-                />
-              </div>
             </div>
             <div class="row">
               <div class="col-50">
-                <h4>Dose</h4>
+                <h4>Amount</h4>
                 <input type="text"
                   required
                   className="form-control"

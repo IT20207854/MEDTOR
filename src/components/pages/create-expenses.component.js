@@ -60,7 +60,7 @@ export default class CreateExpenses extends Component {
         axios.post('http://localhost:5000/expenses/add', expenses)
             .then(res => console.log(res.data));
 
-        window.location = '/';
+        window.location = '/expenses-list.component';
     }
 
 

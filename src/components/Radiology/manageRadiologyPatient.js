@@ -32,9 +32,9 @@ function ManageRadiologyPatient() {
                     <ManageRadiologyPatientCard>
                         <ManageRadiologyPatientH2>CALULATE PATIENT SCAN CHARGE</ManageRadiologyPatientH2>
                         <ManageRadiologyPatientIcon src={calcPat} />
-                        <h4><NavLink to='/calcScanCharge'>Continue</NavLink></h4>
+                        <h4><NavLink to='/calcCost'>Continue</NavLink></h4>
 
-                   
+
 
                     </ManageRadiologyPatientCard>
                 </ManageRadiologyPatientWrapper>
@@ -47,4 +47,3 @@ function ManageRadiologyPatient() {
 
 export default ManageRadiologyPatient;
 
- 

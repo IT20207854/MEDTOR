@@ -138,6 +138,7 @@ export default class AddRadiologyPatient extends Component {
                 required
                 className="form-control"
                 maxLength="10"
+                minLength="10"
                 value={this.state.nic}
                 onChange={this.onChangeNIC}
               />
@@ -170,6 +171,7 @@ export default class AddRadiologyPatient extends Component {
                 value={this.state.mobilenumber}
                 pattern="[0-9]*"
                 maxLength="10"
+                minLength="10"
                 onChange={this.onChangeMobileNumber}
               />
             </div>

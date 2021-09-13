@@ -127,117 +127,99 @@ export default class RegisterVaccine extends Component {
 
         return (
             <div className='addCovidPage'>
-            <br />
-            <div className='container' id="addRegisterForm">
-                <h3 className="addcovidTitle">REGISTER FOR VACCINATION</h3>
-                <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        <label className="textColour">Patient ID: </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state._id}
-                            onChange={this.onChangeID}
-                            placeholder="Enter patientID"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label className="textColour">Name: </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.name}
-                            onChange={this.onChangeName}
-                            placeholder="Enter full name"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label className="textColour">Address: </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.address}
-                            onChange={this.onChangeAddress}
-                            placeholder="Enter address"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label className="textColour">Age: </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={this.state.age}
-                            onChange={this.onChangeAge}
-                            placeholder="Enter age"
-                        />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="validationCustom04" class="form-label" className="textColour">Gender</label>
-                        <select class="form-select" id="validationCustom04" required value={this.state.gender} onChange={this.onChangeGender}>
-                            <option selected disabled value="">Choose</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                        </select></div>
-
-                    <div className="form-group">
-                        <label className="textColour">NIC: </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={this.state.nic}
-                            onChange={this.onChangeNIC}
-                            placeholder="Enter NIC number"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label className="textColour">Phone: </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={this.state.phone}
-                            onChange={this.onChangePhone}
-                            placeholder="Enter mobile number"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label className="textColour">Email: </label>
-                        <input
-                            type="email"
-                            className="form-control"
-                            value={this.state.email}
-                            onChange={this.onChangeEmail}
-                            placeholder="Enter email address"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label className="textColour">Username: </label>
-                        <div>
+                <br />
+                <div className='container' id="addRegisterForm">
+                    <h3 className="addcovidTitle">REGISTER FOR VACCINATION</h3>
+                    <form onSubmit={this.onSubmit}>
+                        <div className="form-group">
+                            <label className="textColour">Patient ID: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                value={this.state._id}
+                                onChange={this.onChangeID}
+                                placeholder="Enter patientID"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label className="textColour">Name: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                value={this.state.name}
+                                onChange={this.onChangeName}
+                                placeholder="Enter full name"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label className="textColour">Address: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                value={this.state.address}
+                                onChange={this.onChangeAddress}
+                                placeholder="Enter address"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label className="textColour">Age: </label>
                             <input
                                 type="text"
                                 className="form-control"
-                                value={this.state.username}
-                                onChange={this.onChangeUsername}
-                                placeholder="Enter username"
+                                value={this.state.age}
+                                onChange={this.onChangeAge}
+                                placeholder="Enter age"
                             />
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <label className="textColour">Password: </label>
-                        <input
-                            type="password"
-                            className="form-control"
-                            value={this.state.password}
-                            onChange={this.onChangePassword}
-                            placeholder="Enter password"
-                        />
-                    </div>
-                    <br/>
-                    <div className="form-group">
-                        <input type="submit" value="REGISTER" className="btn btn-primary" />
-                    </div>
-                </form>
-            </div></div>
+
+                        <div class="form-group">
+                            <label for="validationCustom04" class="form-label" className="textColour">Gender</label>
+                            <select class="form-select" id="validationCustom04" required value={this.state.gender} onChange={this.onChangeGender}>
+                                <option selected disabled value="">Choose</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select></div>
+
+                        <div className="form-group">
+                            <label className="textColour">NIC: </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                maxLength="10"
+                                minLength="10"
+                                value={this.state.nic}
+                                onChange={this.onChangeNIC}
+                                placeholder="Enter NIC number"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label className="textColour">Phone: </label>
+                            <input
+                                type="text"
+                                maxLength="10"
+                                minLength="10"
+                                className="form-control"
+                                value={this.state.phone}
+                                onChange={this.onChangePhone}
+                                placeholder="Enter mobile number"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label className="textColour">Email: </label>
+                            <input
+                                type="email"
+                                className="form-control"
+                                value={this.state.email}
+                                onChange={this.onChangeEmail}
+                                placeholder="Enter email address"
+                            />
+                        </div>
+                        <br />
+                        <div className="form-group">
+                            <input type="submit" value="REGISTER" className="btn btn-primary" />
+                        </div>
+                    </form>
+                </div></div>
         )
     }
 }

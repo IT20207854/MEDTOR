@@ -50,16 +50,16 @@
 }
 
 .editMedicinePage{
-	background-image: url("https://www.principle-pharmacy.com/wp-content/uploads/2020/11/Untitled-11.jpg") no-repeat center center fixed;
+	background: url("https://www.petplace.com/static/0f821ea4dd2d4329f40efac142f23e46/c85e8/shutterstock_706912843.png") no-repeat center center fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 #editMedicineForm{
-	max-width: 800px;
+  max-width: 800px;
   padding: 16px;
-  background-color: white;
+  background-color: rgba(216, 60, 60, 0.918);
 }
 
 .createPatientPage{

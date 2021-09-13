@@ -65,7 +65,7 @@ export default class EditIncome extends Component {
         axios.post('http://localhost:5000/income/update/' + this.props.match.params.id, income)
             .then(res => console.log(res.data));
 
-        window.location = '/';
+        window.location = '/income-list.component';
     }
 
     render() {

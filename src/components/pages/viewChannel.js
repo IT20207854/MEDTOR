@@ -44,6 +44,7 @@ export default class ViewChannel extends Component {
     axios.delete('http://localhost:5000/Channeling/' + id)
       .then(response => { console.log(response.data) });
 
+    alert("Are you sure you want to delete the following appointment from the system?")
     this.setState({
       Channeling: this.state.Channeling.filter(sml => sml._id !== id)
     })

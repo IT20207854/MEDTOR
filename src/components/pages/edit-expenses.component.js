@@ -76,7 +76,7 @@ export default class EditExpenses extends Component {
         axios.post('http://localhost:5000/expenses/update/' + this.props.match.params.id, expenses)
             .then(res => console.log(res.data));
 
-        window.location = '/';
+        window.location = '/expenses-list.component';
     }
 
     render() {

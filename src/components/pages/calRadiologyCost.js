@@ -7,7 +7,7 @@ import './radiology.css';
 import "react-datepicker/dist/react-datepicker.css";
 
 
-export default class CalcCost extends Component {
+export default class calRadiologyCost extends Component {
     constructor(props) {
         super(props);
 
@@ -57,7 +57,7 @@ export default class CalcCost extends Component {
 
     onChangeScanCost(e) {
         this.setState({
-            scanCost: e.target.value
+           scanCost: e.target.value
         });
     }
 
@@ -91,19 +91,20 @@ export default class CalcCost extends Component {
         axios.post('http://localhost:5000/cost/add', cost)
             .then(res => console.log(res.data));
 
-        window.location = '/viewcalCost';
+        alert("Successfully genarate report!");
+        window.location = '/viewRadiologyCost';
     }
 
 
     render() {
         return (
 
-            <div className="calcCostPage">
+            <div className="calRadiologyCostPage">
                 <br />
-                <button className="viewAllCostBtn"><Link to="/viewcalCost">View All Cost Details</Link></button>
+                <button className="viewAllCostBtn"><Link to="/viewRadiologyCost">View All Cost Details</Link></button>
                 <br />
                 <form onSubmit={this.onSubmit} className="container" id="calcForm">
-                    <h3 className="calcCostTitle">PATIENT COST CALCULATION</h3>
+                <h3 className="calcCostTitle">PATIENT COST CALCULATION</h3>
                     <div className="form-group">
                         <label>Date: </label>
                         <div>
@@ -160,8 +161,8 @@ export default class CalcCost extends Component {
                             onChange={this.onChangeNoOfScans}
                         />
                     </div>
-
-                    <label>Total Cost: </label>
+                
+                    <label>Total RadiologyCost: </label>
                     <div>
                         <input
                             type="text"

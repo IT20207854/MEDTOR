@@ -48,6 +48,12 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
+        title: 'Finances',
+        path: '/financeManage',
+        icon: <AiIcons.AiOutlineDollarCircle />,
+        cName: 'nav-text'
+    },
+    {
         title: 'Radiology and Imaging',
         path: '/manageRadiologyPatient',
         icon: <FaIcons.FaXRay />,
@@ -58,11 +64,5 @@ export const SidebarData = [
         path: '/',
         icon: <FaIcons.FaAmbulance />,
         cName: 'nav-text'
-    },
-    {
-        title: 'Finances',
-        path: '/financeManage',
-        icon: <AiIcons.AiOutlineDollarCircle />,
-        cName: 'nav-text'
-    },
+    }
 ];

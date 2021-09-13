@@ -119,20 +119,23 @@ export default class AddStaff extends Component {
                         </div>
                         <br />
                         <div className="form-group">
-                            <label>Department: <br />
-                                <select className="staffDept" value={this.state.department}
-                                    onChange={this.onChangeDepartment}>
-                                    <option value="Medical">Medical</option>
-                                    <option value="Management">Management</option>
-                                    <option value="Minor Staff">Minor Staff</option>
-                                </select>
-                            </label>
+                            <label>Department: <br /> </label>
+                            <select className="staffDept" value={this.state.department}
+                                onChange={this.onChangeDepartment}>
+                                <option selected disabled value="">Select</option>
+                                <option value="Medical">Medical</option>
+                                <option value="Management">Management</option>
+                                <option value="Minor Staff">Minor Staff</option>
+                            </select>
+
                         </div>
                         <br />
                         <div className="form-group">
                             <label>NIC: </label>
                             <input type="text"
                                 required
+                                maxLength="10"
+                                minLength="10"
                                 className="form-control"
                                 value={this.state.nic}
                                 onChange={this.onChangeNIC}
@@ -143,6 +146,7 @@ export default class AddStaff extends Component {
                             <label>Gender:<br />
                                 <select className="staffGender" value={this.state.gender}
                                     onChange={this.onChangeGender}>
+                                    <option selected disabled value="">Select</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                 </select>
@@ -153,6 +157,9 @@ export default class AddStaff extends Component {
                             <label>Phone: </label>
                             <input
                                 type="text"
+                                pattern="[0-9]*"
+                                maxLength="10"
+                                minLength="10"
                                 className="form-control"
                                 value={this.state.phone}
                                 onChange={this.onChangePhone}
@@ -162,6 +169,7 @@ export default class AddStaff extends Component {
                             <label>Email: </label>
                             <input
                                 type="text"
+                                pattern="[a-z0-9._%+-]+@[a-z0-9]+\.[a-z]{2,3}"
                                 className="form-control"
                                 value={this.state.email}
                                 onChange={this.onChangeEmail}
@@ -170,7 +178,7 @@ export default class AddStaff extends Component {
 
                         <br />
                         <div className="form-group">
-                            <input className="registerEmpBtn" type="submit" value="REGISTER EMPLOYEE" className="btn btn-primary" />
+                            <input id="registerEmpBtn" type="submit" value="REGISTER EMPLOYEE" className="btn btn-primary" />
                             <br />
                         </div>
                     </form>
