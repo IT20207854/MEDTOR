@@ -15,12 +15,12 @@ export const ManageLabContainer = styled.div`
     }
 `
 export const ManageLabWrapper = styled.div`
-    max-width: 900px;
+    max-width: 1025px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
-    grid-gap: 16px;
+    grid-gap: 70px;
     padding: 0 50px;
     @media screen and (max-width: 1000px) {
         grid-template-columns: 1fr 1fr;

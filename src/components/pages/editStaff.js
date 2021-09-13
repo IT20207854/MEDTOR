@@ -100,8 +100,9 @@ export default class EditStaff extends Component {
 
     render() {
         return (
-            <div className='editStaff'>
-                <div className='container'>
+            <div className='editStaffPage'>
+                <br />
+                <div className='container' id="editStaffForm">
                     <h3>Edit Employee Details</h3>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
@@ -161,7 +162,7 @@ export default class EditStaff extends Component {
                         </div>
                         <br />
                         <div className="form-group">
-                            <input type="submit" value="Edit Employee Details" className="btn btn-primary" />
+                            <input id="editStaffBtn" type="submit" value="Edit Employee Details" className="btn btn-primary" />
                         </div>
                     </form>
                 </div>

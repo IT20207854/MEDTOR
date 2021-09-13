@@ -16,11 +16,9 @@ function SearchBar() {
 
     useEffect(() => {
         setFilteredData(
-            staff.filter((staff) => staff.name.toLowerCase().includes(search.toLowerCase())) ||
-            staff.filter((staff) => staff.id.toLowerCase().includes(search.toLowerCase()))
+            staff.filter((staff) => staff.name.toLowerCase().includes(search.toLowerCase()))
         )
     }, [search], staff)
-
 
     return (
         <div className="searchStaffPage">
@@ -44,6 +42,8 @@ function SearchBar() {
                             return <div key={val.id}>
                                 <td>{val._id}</td>
                                 <td>{val.name}</td>
+                                <td>{val.department}</td>
+                                <td>{val.email}</td>
                             </div>
                         })}
                     </tbody>

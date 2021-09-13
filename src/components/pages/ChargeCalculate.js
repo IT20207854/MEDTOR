@@ -90,7 +90,7 @@ export default class ChargeCalculate extends Component {
   render() {
     return (
       <div className="ChargeCalculate">
-
+        <br />
         <form onSubmit={this.onSubmit}>
 
           <div className="form-calculation">

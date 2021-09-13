@@ -52,7 +52,7 @@ export default class CreateIncome extends Component {
         axios.post('http://localhost:5000/income/add', income)
             .then(res => console.log(res.data));
 
-        window.location = '/';
+        window.location = '/income-list.component';
     }
 
 

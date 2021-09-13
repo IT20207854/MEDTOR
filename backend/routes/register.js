@@ -19,8 +19,6 @@ router.route('/add').post((req, res) => {
     const phone = req.body.phone;
     const email = req.body.email;
     const address = req.body.address;
-    const username = req.body.username;
-    const password = req.body.password;
 
     const newRegister = new Register({
 
@@ -31,10 +29,7 @@ router.route('/add').post((req, res) => {
         gender,
         phone,
         email,
-        address,
-        username,
-        password
-
+        address
     });
 
     newRegister.save()
@@ -63,12 +58,10 @@ router.route('/update/:id').post((req, res) => {
             register.name = req.body.name;
             register.nic = req.body.nic;
             register.age = Number(req.body.age);
-            register.gender = Number(req.body.gender);
+            register.gender = req.body.gender;
             register.phone = Number(req.body.phone);
             register.email = req.body.email;
             register.address = req.body.address;
-            register.username = req.body.username;
-            register.password = req.body.password;
 
             register.save()
                 .then(() => res.json('Register member updated!'))

@@ -54,8 +54,9 @@ export default class ViewTfee extends Component {
 
     render() {
         return (
-            <div id='addCovidPage' className='viewTfee'>
-                <div className='container'>
+            <div id='calCovidPage' className='viewTfee'>
+                <br />
+                <div id="calCovid" className='container'>
                     <h3 className="addcovid1Title">Patients' Vaccine Details</h3>
                     <table className="table">
                         <thead className="thead-light">

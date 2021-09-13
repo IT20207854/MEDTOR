@@ -154,17 +154,19 @@ export default class CalcSalary extends Component {
 
                     <br />
                     <div className="form-group">
-                        <label>Basic Salary:  </label>
+                        <label>Basic Salary:<br />  </label>
                         <select
                             value={this.state.basicSalary}
                             onChange={this.onChangeBasicSalary}>
                             <option selected disabled value="">Select</option>
                             <option disabled>Doctor</option>
-                            <option value="7000">7000</option>
+                            <option value="100000">100000</option>
+                            <option disabled>Nurse</option>
+                            <option value="75000">75000</option>
                             <option disabled>Management Staff</option>
-                            <option value="4500">4500</option>
+                            <option value="60000">60000</option>
                             <option disabled>Minor Staff</option>
-                            <option value="3500">3500</option>
+                            <option value="35000">35000</option>
                         </select>
 
                     </div>

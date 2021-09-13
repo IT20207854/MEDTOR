@@ -58,7 +58,7 @@ router.route('/update/:id').post((req, res) => {
             staff.department = req.body.department;
             staff.nic = req.body.nic;
             staff.gender = req.body.gender;
-            staff.phone = Number(req.body.phone);
+            staff.phone = req.body.phone;
             staff.email = req.body.email;
 
             staff.save()

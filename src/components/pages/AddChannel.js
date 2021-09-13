@@ -107,7 +107,7 @@ export default class AddChannel extends Component {
       .then(res => console.log(res.data));
 
     alert("New Channel added!");
-    window.location = '/manageChannel';
+    window.location = '/viewChannel';
   }
 
 
@@ -173,8 +173,8 @@ export default class AddChannel extends Component {
               placeholder="Enter doctor name"
               value={this.state.DoctorName}
               onChange={this.onChangeDoctorName}
-            /> 
-            
+            />
+
           </div><br />
           <div className="form-group">
             <label>date: </label>

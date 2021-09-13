@@ -90,13 +90,13 @@ export default class AddLab extends Component {
         axios.post('http://localhost:5000/lab/add', lab)
             .then(res => console.log(res.data));
 
-        window.location = '/manageLab';
+        window.location = '/labView';
 
     }
     render() {
         return (
             <div className="AddLab">
-                <h3 className="addlabTitle">ADD LAB RESULT</h3><br/><br/>
+                <h3 className="addlabTitle">ADD LAB RESULT</h3><br /><br />
                 <form onSubmit={this.onSubmit}>
                     <div className="form-labgroup1">
                         <label><b>Patient Name: </b></label>
@@ -169,11 +169,11 @@ export default class AddLab extends Component {
                                 onChange={this.onChangeTestdate}
                             />
                         </div>
-                    
-                    <br/><br/>
-                    <div className="labform">
-                        <input type="submit" value="ADD RESULT DETAILS" className="btn btn-primary" id="btnlab1" />
-                    </div>
+
+                        <br /><br />
+                        <div className="labform">
+                            <input type="submit" value="ADD RESULT DETAILS" className="btn btn-primary" id="btnlab1" />
+                        </div>
                     </div>
                 </form>
             </div>

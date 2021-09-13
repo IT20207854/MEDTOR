@@ -74,6 +74,8 @@ import ManageRadiologyPatient from './components/Radiology/manageRadiologyPatien
 import AddRadiologyPatient from './components/pages/addRadiologyPatient';
 import ViewRadiologyPatient from './components/pages/viewRadiologyPatient';
 import EditRadiologyPatient from './components/pages/editRadiologyPatient';
+import CalcCost from './components/pages/calcCost';
+import ViewCalCost from './components/pages/viewcalCost';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -150,7 +152,8 @@ function App() {
               <Route path='/addRadiologyPatient' component={AddRadiologyPatient} />
               <Route path='/viewRadiologyPatient' component={ViewRadiologyPatient} />
               <Route path='/editRadiologyPatient/:id' component={EditRadiologyPatient} />
-
+              <Route path='/calcCost' component={CalcCost} />
+              <Route path='/viewcalCost' component={ViewCalCost} />
 
 
             </div>

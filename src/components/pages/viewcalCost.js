@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link, Redirect } from "react-router-dom";
 
-const Cost = props =>(
+const Cost = props => (
     <tr>
         <td>{props.cost.name}</td>
         <td>{props.cost.urineTest}</td>
@@ -59,10 +59,10 @@ export default class viewcalCost extends Component {
         return (
             <div className='viewcalCost'>
                 <div className='container'>
-                    <h3 className="addlabTitle">Patient Cost Details</h3><br/>
+                    <h3 className="addlabTitle">Patient Cost Details</h3><br />
                     <table className="table">
                         <thead className="thead-light">
-                        <tr>
+                            <tr>
                                 <th>Name</th>
                                 <th>Urine Test</th>
                                 <th>Full Blood Count</th>
