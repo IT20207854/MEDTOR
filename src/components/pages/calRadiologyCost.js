@@ -57,7 +57,7 @@ export default class calRadiologyCost extends Component {
 
     onChangeScanCost(e) {
         this.setState({
-           scanCost: e.target.value
+            scanCost: e.target.value
         });
     }
 
@@ -92,7 +92,7 @@ export default class calRadiologyCost extends Component {
             .then(res => console.log(res.data));
 
         alert("Successfully genarate report!");
-        window.location = '/viewRadiologyCost';
+        window.location = '/manageRadiologyPatient';
     }
 
 
@@ -104,7 +104,7 @@ export default class calRadiologyCost extends Component {
                 <button className="viewAllCostBtn"><Link to="/viewRadiologyCost">View All Cost Details</Link></button>
                 <br />
                 <form onSubmit={this.onSubmit} className="container" id="calcForm">
-                <h3 className="calcCostTitle">PATIENT COST CALCULATION</h3>
+                    <h3 className="calcCostTitle">PATIENT COST CALCULATION</h3>
                     <div className="form-group">
                         <label>Date: </label>
                         <div>
@@ -161,7 +161,7 @@ export default class calRadiologyCost extends Component {
                             onChange={this.onChangeNoOfScans}
                         />
                     </div>
-                
+
                     <label>Total RadiologyCost: </label>
                     <div>
                         <input
