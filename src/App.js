@@ -11,6 +11,7 @@ import CalcSalary from './components/pages/calcSalary';
 import ViewSalary from './components/pages/viewSalary';
 import SearchStaff from './components/pages/seachStaff';
 import SearchSalary from './components/pages/searchSalary';
+import StaffReport from './components/pages/staffReport';
 import Dashboard from "./components/Dashboard";
 import NavMain from "./components/layout/NavMain";
 import Landing from "./components/layout/Landing";
@@ -74,6 +75,7 @@ import ManageRadiologyPatient from './components/Radiology/manageRadiologyPatien
 import AddRadiologyPatient from './components/pages/addRadiologyPatient';
 import EditRadiologyPatient from './components/pages/editRadiologyPatient';
 import CalRadiologyCost from './components/pages/calRadiologyCost';
+import ViewRadiologyPatient from './components/pages/viewRadiologyPatient';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -104,6 +106,7 @@ function App() {
               <Route path='/calcSalary' component={CalcSalary} />
               <Route path='/viewSalary' component={ViewSalary} />
               <Route path='/editStaff/:id' component={EditStaff} />
+              <Route path='/staffReport' component={StaffReport} />
 
               <Route path='/managePatient' component={managePatient} />
               <Route path="/admitPatient" component={AdmitPatient} />
@@ -150,6 +153,7 @@ function App() {
               <Route path='/addRadiologyPatient' component={AddRadiologyPatient} />
               <Route path='/editRadiologyPatient/:id' component={EditRadiologyPatient} />
               <Route path='/calRadiologyCost' component={CalRadiologyCost} />
+              <Route path='/viewRadiologyPatient' component={ViewRadiologyPatient} />
 
 
             </div>

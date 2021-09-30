@@ -204,7 +204,7 @@ export default class calcExpInc extends Component {
         axios.post('http://localhost:5000/calcExp/add', calcExpInc)
             .then(res => console.log(res.data));
 
-        window.location = '/';
+        window.location = '/financeManage';
     }
 
 

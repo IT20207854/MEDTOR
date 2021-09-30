@@ -12,7 +12,7 @@ const expensesSchema = new Schema({
 
     },
 
-    type:{
+    type: {
         type: String,
         required: true,
         unique: true,
@@ -20,14 +20,13 @@ const expensesSchema = new Schema({
 
     },
 
-    department:{
+    department: {
         type: String,
         required: true,
-        unique: true,
         trim: true
     },
 
-    Value:{
+    Value: {
         type: Number
 
     }

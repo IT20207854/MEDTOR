@@ -28,7 +28,7 @@ function ManagePharmacy() {
 
                     </ManagePharmacyCard>
                     <ManagePharmacyCard>
-                        <ManagePharmacyH2>ADD NEW PATIENT</ManagePharmacyH2>
+                        <ManagePharmacyH2>ADD PATEINT PRESCRIPTION</ManagePharmacyH2>
                         <ManagePharmacyIcon src={addPatient} />
                         <h4><NavLink to='/create-patient'>Continue</NavLink></h4>
 

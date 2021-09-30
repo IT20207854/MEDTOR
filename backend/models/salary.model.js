@@ -7,14 +7,12 @@ const salarySchema = new Schema({
     _id: {
         type: String,
         required: true,
-        unique: true,
         trim: true
 
     },
     name: {
         type: String,
         required: true,
-        unique: true,
         trim: true
     },
     date: {

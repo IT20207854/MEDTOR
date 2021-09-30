@@ -155,7 +155,7 @@ export default class AddPatient extends Component {
         <br />
         <div className='container' id="createPatientForm">
           <form onSubmit={this.onSubmit}>
-            <h3 className="createPatientTitle">Add New Patient</h3>
+            <h3 className="createPatientTitle">Add Patient Presecription</h3>
             <br />
             <div className="form-group">
               <label>Customer Name: </label>
@@ -189,6 +189,7 @@ export default class AddPatient extends Component {
               <label>Mobile Number : </label>
               <input type="text"
                 required
+                maxLength="10"
                 className="form-control"
                 value={this.state.mno}
                 onChange={this.onChangeMno}
@@ -269,7 +270,7 @@ export default class AddPatient extends Component {
 
             </div>
             <div className="form-group">
-              <input type="Submit" value="Create Patient" className="btn btn-primary" onClick={this.getTotal} />
+              <input type="Submit" value="Add Prescription" className="btn btn-primary" onClick={this.getTotal} />
             </div>
           </form>
         </div>
