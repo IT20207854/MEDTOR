@@ -91,6 +91,24 @@
 	background-color: white;
 }
 
+.generateReportBtn{
+	margin: 25px;
+	margin-left: 725px;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	border-radius: 8px;
+	background-color:rgb(26, 23, 23);
+	height: 50px;
+	width:400px;
+	transition-duration: 0.4s;
+}
+
+.generateReportBtn:hover {
+	background-color: white;
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+}
+
 .homeLink {
 	font-family: "Poppins", sans-serif;
 	font-size: 30px;
@@ -252,4 +270,11 @@
 	height: 50px;
 }
 
+.salaryReportPage{
+	background:url('https://i.pinimg.com/originals/b7/cd/5f/b7cd5f4b3eb91bc06ac4f790f019b323.jpg');
+}
+
+.staffReportTitle{
+	color:rgb(7, 7, 82);
+}
 

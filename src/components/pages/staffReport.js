@@ -40,6 +40,12 @@ export default class pdfGenerator extends PureComponent {
     jsPdfGenerator = () => {
         var doc = new jsPDF('p', 'pt');
 
+        doc.setFont("calibri")
+        doc.setFontSize(22)
+        doc.setFont(undefined, 'bold')
+        doc.text(175, 30, "Staff Salary Summary Report", 'center')
+        doc.text(175, 30, "  ",)
+
         doc.autoTable({ html: '#salaryDetailsTable' })
 
         doc.save("Staff_Salary_Report.pdf");
@@ -50,10 +56,11 @@ export default class pdfGenerator extends PureComponent {
 
     render() {
         return (
-            <div className='viewSalaryPage'>
+            <div className="salaryReportPage">
                 <br />
-                <div className='container' id="viewSalaryForm">
-                    <h3 className="staffSalaryDetails">STAFF SALARY DETAILS</h3>
+                <div className='container'>
+                    <h3 className="staffReportTitle">STAFF SALARY SUMMARY REPORT</h3>
+                    <br />
                     <table className="table" id="salaryDetailsTable">
                         <thead className="thead-light">
                             <tr>
@@ -68,7 +75,7 @@ export default class pdfGenerator extends PureComponent {
                         </tbody>
                     </table>
 
-                    <button onClick={this.jsPdfGenerator}>GENERATE REPORT</button>
+                    <button onClick={this.jsPdfGenerator} className="generateReportBtn">GENERATE REPORT</button>
                 </div>
             </div>
         )
