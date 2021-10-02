@@ -57,7 +57,7 @@ export default class calRadiologyCost extends Component {
 
     onChangeScanCost(e) {
         this.setState({
-            scanCost: e.target.value
+           scanCost: e.target.value
         });
     }
 
@@ -77,7 +77,7 @@ export default class calRadiologyCost extends Component {
         e.preventDefault();
 
         const cost = {
-            _id: this.state._id,
+         
             patientname: this.state.patientname,
             date: this.state.date,
             testingname: this.state.testingname,
@@ -88,11 +88,17 @@ export default class calRadiologyCost extends Component {
 
         console.log(cost);
 
-        axios.post('http://localhost:5000/cost/add', cost)
-            .then(res => console.log(res.data));
+        axios.post('http://localhost:5000/radiologyCost/add', cost) 
+            .then((res)=>{
+                
+            alert("Successfully genarate report!");
+            window.location = '/viewRadiologyCost';
 
-        alert("Successfully genarate report!");
-        window.location = '/manageRadiologyPatient';
+            }).catch((err)=>{
+
+                console.log(err);
+            });
+
     }
 
 
@@ -100,11 +106,15 @@ export default class calRadiologyCost extends Component {
         return (
 
             <div className="calRadiologyCostPage">
-                <br />
-                <button className="viewAllCostBtn"><Link to="/viewRadiologyCost">View All Cost Details</Link></button>
-                <br />
-                <form onSubmit={this.onSubmit} className="container" id="calcForm">
-                    <h3 className="calcCostTitle">PATIENT COST CALCULATION</h3>
+                <button className="viewAllRadiologyCostBtn"><Link className="linkToViewRadiologyCost" to="/viewRadiologyCost">View All Cost Details</Link></button>
+                <button className="searchRadiologyBtn"><Link className="linkToViewRadiologyCost" to="/searchRadiologyCost">Search Cost Details</Link></button>
+                <form onSubmit={this.onSubmit} className="container" id="radiologyCostForm">
+                <h3 className="calRadiologyCostTitle">PATIENT COST CALCULATION</h3>
+                    
+                    <br />
+
+                
+                    
                     <div className="form-group">
                         <label>Date: </label>
                         <div>
@@ -161,7 +171,7 @@ export default class calRadiologyCost extends Component {
                             onChange={this.onChangeNoOfScans}
                         />
                     </div>
-
+                
                     <label>Total RadiologyCost: </label>
                     <div>
                         <input
@@ -176,6 +186,9 @@ export default class calRadiologyCost extends Component {
                         <input type="submit" value="Add to Database" className="btn btn-primary" onClick={this.getTotal} />
                         <br />
 
+                    </div>
+                    <div className="form-rbtn">
+                        <button className="btn btn-primary" id="rdatabase"><Link className="toradiologyReportPage" to="/radiologyReport" >GENERATE REPORT</Link></button>
                     </div>
                 </form>
 

@@ -36,7 +36,7 @@ function ManageStaff() {
                     <ManageStaffCard>
                         <ManageStaffH2>GENERATE EMPLOYEE REPORT</ManageStaffH2>
                         <ManageStaffIcon src={generateEmp} />
-                        <h4><NavLink to='/viewStaff'>Continue</NavLink></h4>
+                        <h4><NavLink to='/StaffReport'>Continue</NavLink></h4>
 
                     </ManageStaffCard>
                 </ManageStaffWrapper>

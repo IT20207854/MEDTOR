@@ -54,28 +54,30 @@ export default class ViewTfee extends Component {
 
     render() {
         return (
-            <div id='calCovidPage' className='viewTfee'>
+            <div id='addCovidPage' className='viewTfee'>
                 <br />
-                <div id="calCovid" className='container'>
-                    <h3 className="addcovid1Title">Patients' Vaccine Details</h3>
-                    <table className="table">
-                        <thead className="thead-light">
-                            <tr>
-                                <th>Patient ID</th>
-                                <th>Patient Name</th>
-                                <th>Date</th>
-                                <th>Vaccine Fee</th>
-                                <th>Dose Size</th>
-                                <th>Total Fee</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.tfeeDetailsList()}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                <div className='container'>
+                    <div id='covidbar' >
+                        <button className="searchStaffBtn"><Link className="toSearchPage" to="/searchTfee" >Search Vaccine details</Link></button>
+                        <h3 className="addcovid1Title">Patients' Vaccine Details</h3>
+                        <table className="table">
+                            <thead className="thead-light">
+                                <tr>
+                                    <th>Patient ID</th>
+                                    <th>Patient Name</th>
+                                    <th>Date</th>
+                                    <th>Vaccine Fee</th>
+                                    <th>Dose Size</th>
+                                    <th>Total Fee</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.tfeeDetailsList()}
+                            </tbody>
+                        </table>
+                    </div>
+                </div></div>
         )
     }
 }

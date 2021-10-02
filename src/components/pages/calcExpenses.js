@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-//import './calcExp.css';
+import './calcExp.css';
+import PDF from './PDF';
 
 export default class calcExpInc extends Component {
     constructor(props) {
         super(props);
 
-
-        this.onChangeD1 = this.onChangeD1.bind(this);
         this.onChangeE1 = this.onChangeE1.bind(this);
-        this.onChangeD2 = this.onChangeD2.bind(this);
         this.onChangeE2 = this.onChangeE2.bind(this);
-        this.onChangeD3 = this.onChangeD3.bind(this);
         this.onChangeE3 = this.onChangeE3.bind(this);
-        this.onChangeD4 = this.onChangeD4.bind(this);
         this.onChangeE4 = this.onChangeE4.bind(this);
 
         this.onChangeDep1 = this.onChangeDep1.bind(this);
@@ -31,16 +27,13 @@ export default class calcExpInc extends Component {
         this.onChangeProfLst = this.onChangeProfLst.bind(this);
 
         this.onSubmit = this.onSubmit.bind(this);
+        this.submitPost = this.submitPost.bind(this);
 
         this.state = {
 
-            d1: '',
             e1: '',
-            d2: '',
             e2: '',
-            d3: '',
             e3: '',
-            d4: '',
             e4: '',
             dep1: '',
             i1: '',
@@ -53,16 +46,12 @@ export default class calcExpInc extends Component {
             totalExp: '',
             totalInc: '',
             ProfLst: '',
+            postSubmitted: false
         }
     }
 
 
 
-    onChangeD1(e) {
-        this.setState({
-            d1: e.target.value
-        });
-    }
 
     onChangeE1(e) {
         this.setState({
@@ -70,11 +59,6 @@ export default class calcExpInc extends Component {
         });
     }
 
-    onChangeD2(e) {
-        this.setState({
-            d2: e.target.value
-        });
-    }
 
     onChangeE2(e) {
         this.setState({
@@ -82,11 +66,6 @@ export default class calcExpInc extends Component {
         });
     }
 
-    onChangeD3(e) {
-        this.setState({
-            d3: e.target.value
-        });
-    }
 
     onChangeE3(e) {
         this.setState({
@@ -94,11 +73,6 @@ export default class calcExpInc extends Component {
         });
     }
 
-    onChangeD4(e) {
-        this.setState({
-            d4: e.target.value
-        });
-    }
 
     onChangeE4(e) {
         this.setState({
@@ -178,13 +152,9 @@ export default class calcExpInc extends Component {
         e.preventDefault();
 
         const calcExpInc = {
-            d1: this.state.d1,
             e1: this.state.e1,
-            d2: this.state.d2,
             e2: this.state.e2,
-            d3: this.state.d3,
             e3: this.state.e3,
-            d4: this.state.d4,
             e4: this.state.e4,
             dep1: this.state.dep1,
             i1: this.state.i1,
@@ -207,263 +177,231 @@ export default class calcExpInc extends Component {
         window.location = '/';
     }
 
+    submitPost = (e) => {
+        if (!this.state.dep1 || !this.state.e1) {
+            alert('All fileds are required!');
+            e.preventDefault();
+        } else {
+            this.setState({
+                postSubmitted: true
+            })
+        }
+    }
+
 
     render() {
         return (
 
-            <div className='addStaffPage'>
+            <>
+                {!this.state.postSubmitted ?
 
-                <form className="row gy-2 gx-3 align-items-center" className='container' id="addStaffForm" onSubmit={this.onSubmit}>
+                    (<div className='calcPage'>
 
-                    <h3 className='addStaffTitle'>Grand Total Expenses</h3>
-                    <div  >
-                        <label for="autoSizingInput">Department </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.d1}
-                            onChange={this.onChangeD1}
-                        />
+                        <br /><br />
 
-                    </div>
+                        <form className='container' id="calcForm" onSubmit={this.onSubmit}>
 
-                    <div >
-                        <label class="visually-hidden" for="autoSizingInput"> </label>
-                        <input type="text"
-                            placeholder="Enter Total Expenses"
-                            required
-                            className="form-control"
-                            value={this.state.e1}
-                            onChange={this.onChangeE1}
-                        />
-                    </div>
+                            <div  >
+                                <label for="autoSizingInput">Department </label>
+                                <input type="text"
+                                    required
+                                    className="form-control"
+                                    value={this.state.dep1}
+                                    onChange={this.onChangeDep1}
+                                />
 
+                            </div>
 
+                            <br />
+                            <div >
+                                <label class="visually-hidden" for="autoSizingInput"> </label>
+                                <input type="text"
+                                    placeholder="Enter Total Expenses"
+                                    required
+                                    className="form-control"
+                                    value={this.state.e1}
+                                    onChange={this.onChangeE1}
+                                />
+                            </div>
+                            <br />
 
-                    <br /> <br />
+                            <div >
+                                <label class="visually-hidden" for="autoSizingInput"> </label>
+                                <input type="text"
+                                    placeholder="Enter Total Income"
+                                    required
+                                    className="form-control"
+                                    value={this.state.i1}
+                                    onChange={this.onChangeI1}
+                                />
+                            </div>
+                            <br />
 
+                            <div  >
+                                <label for="autoSizingInput">Department </label>
+                                <input type="text"
+                                    required
+                                    className="form-control"
+                                    value={this.state.dep2}
+                                    onChange={this.onChangeDep2}
+                                />
 
-                    <div  >
-                        <label for="autoSizingInput">Department </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.d2}
-                            onChange={this.onChangeD2}
-                        />
+                            </div>
+                            <br />
 
-                    </div>
-                    <div >
-                        <label class="visually-hidden" for="autoSizingInput"> </label>
-                        <input type="text"
-                            placeholder="Enter Total Expenses"
-                            required
-                            className="form-control"
-                            value={this.state.e2}
-                            onChange={this.onChangeE2}
-                        />
-                    </div>
+                            <div >
+                                <label class="visually-hidden" for="autoSizingInput"> </label>
+                                <input type="text"
+                                    placeholder="Enter Total Expenses"
+                                    required
+                                    className="form-control"
+                                    value={this.state.e2}
+                                    onChange={this.onChangeE2}
+                                />
+                            </div>
+                            <br />
 
-
-
-
-                    <br /> <br />
-
-
-                    <div  >
-                        <label for="autoSizingInput">Department </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.d3}
-                            onChange={this.onChangeD3}
-                        />
-
-                    </div>
-                    <div >
-                        <label class="visually-hidden" for="autoSizingInput"> </label>
-                        <input type="text"
-                            placeholder="Enter Total Expenses"
-                            required
-                            className="form-control"
-                            value={this.state.e3}
-                            onChange={this.onChangeE3}
-                        />
-                    </div>
-
-
-
-                    <br /> <br />
+                            <div >
+                                <label class="visually-hidden" for="autoSizingInput"> </label>
+                                <input type="text"
+                                    placeholder="Enter Total Income"
+                                    required
+                                    className="form-control"
+                                    value={this.state.i2}
+                                    onChange={this.onChangeI2}
+                                />
+                            </div>
 
 
-                    <div>
-                        <label for="autoSizingInput">Department </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.d4}
-                            onChange={this.onChangeD4}
-                        />
+                            <br />
 
-                    </div>
-                    <div >
-                        <label class="visually-hidden" for="autoSizingInput"> </label>
-                        <input type="text"
-                            placeholder="Enter Total Expenses"
-                            required
-                            className="form-control"
-                            value={this.state.e4}
-                            onChange={this.onChangeE4}
-                        />
-                    </div>
+                            <div  >
+                                <label for="autoSizingInput">Department </label>
+                                <input type="text"
+                                    required
+                                    className="form-control"
+                                    value={this.state.dep3}
+                                    onChange={this.onChangeDep3}
+                                />
 
-                    <div >
-                        <label for="autoSizingInput">Grand Total of All Expenses</label>
-                        <input type="text"
-                            placeholder="Grand Total Expenses"
-                            required
-                            className="form-control"
-                            value={(parseInt(this.state.e1) + parseInt(this.state.e2) + parseInt(this.state.e3) + parseInt(this.state.e4))}
-                            onChange={this.onChangeTotalExp}
-                        />
-                    </div>
+                            </div>
+                            <br />
+                            <div >
+                                <label class="visually-hidden" for="autoSizingInput"> </label>
+                                <input type="text"
+                                    placeholder="Enter Total Expenses"
+                                    required
+                                    className="form-control"
+                                    value={this.state.e3}
+                                    onChange={this.onChangeE3}
+                                />
+                            </div>
+                            <br />
 
-                    <h3>Grand Total Income</h3>
-
-                    <div  >
-                        <label for="autoSizingInput">Department </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.dep1}
-                            onChange={this.onChangeDep1}
-                        />
-
-                    </div>
-
-                    <div >
-                        <label class="visually-hidden" for="autoSizingInput"> </label>
-                        <input type="text"
-                            placeholder="Enter Total Income"
-                            required
-                            className="form-control"
-                            value={this.state.i1}
-                            onChange={this.onChangeI1}
-                        />
-                    </div>
+                            <div >
+                                <label class="visually-hidden" for="autoSizingInput"> </label>
+                                <input type="text"
+                                    placeholder="Enter Total Income"
+                                    required
+                                    className="form-control"
+                                    value={this.state.i3}
+                                    onChange={this.onChangeI3}
+                                />
+                            </div>
 
 
+                            <br />
 
-                    <br /> <br />
+                            <div>
+                                <label for="autoSizingInput">Department </label>
+                                <input type="text"
+                                    required
+                                    className="form-control"
+                                    value={this.state.dep4}
+                                    onChange={this.onChangeDep4}
+                                />
 
+                            </div>
+                            <br />
+                            <div >
+                                <label class="visually-hidden" for="autoSizingInput"> </label>
+                                <input type="text"
+                                    placeholder="Enter Total Expenses"
+                                    required
+                                    className="form-control"
+                                    value={this.state.e4}
+                                    onChange={this.onChangeE4}
+                                />
+                            </div>
+                            <br />
 
-                    <div  >
-                        <label for="autoSizingInput">Department </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.dep2}
-                            onChange={this.onChangeDep2}
-                        />
+                            <div >
+                                <label class="visually-hidden" for="autoSizingInput"> </label>
+                                <input type="text"
+                                    placeholder="Enter Total Income"
+                                    required
+                                    className="form-control"
+                                    value={this.state.i4}
+                                    onChange={this.onChangeI4}
+                                />
+                            </div>
+                            <br />
+                            <div >
+                                <label for="autoSizingInput">Grand Total of All Expenses</label>
+                                <input type="text"
+                                    placeholder="Grand Total Expenses"
+                                    required
+                                    className="form-control"
+                                    value={(parseInt(this.state.e1) + parseInt(this.state.e2) + parseInt(this.state.e3) + parseInt(this.state.e4))}
+                                    onChange={this.onChangeTotalExp}
+                                />
+                            </div>
+                            <br />
 
-                    </div>
-                    <div >
-                        <label class="visually-hidden" for="autoSizingInput"> </label>
-                        <input type="text"
-                            placeholder="Enter Total Income"
-                            required
-                            className="form-control"
-                            value={this.state.i2}
-                            onChange={this.onChangeI2}
-                        />
-                    </div>
-
-
-
-
-                    <br /> <br />
-
-
-                    <div  >
-                        <label for="autoSizingInput">Department </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.dep3}
-                            onChange={this.onChangeDep3}
-                        />
-
-                    </div>
-                    <div >
-                        <label class="visually-hidden" for="autoSizingInput"> </label>
-                        <input type="text"
-                            placeholder="Enter Total Income"
-                            required
-                            className="form-control"
-                            value={this.state.i3}
-                            onChange={this.onChangeI3}
-                        />
-                    </div>
-
-
-
-                    <br /> <br />
-
-
-                    <div>
-                        <label for="autoSizingInput">Department </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.dep4}
-                            onChange={this.onChangeDep4}
-                        />
-
-                    </div>
-                    <div >
-                        <label class="visually-hidden" for="autoSizingInput"> </label>
-                        <input type="text"
-                            placeholder="Enter Total Income"
-                            required
-                            className="form-control"
-                            value={this.state.i4}
-                            onChange={this.onChangeI4}
-                        />
-                    </div>
-
-                    <div >
-                        <label for="autoSizingInput">Grand Total of All Income</label>
-                        <input type="text"
-                            placeholder="Grand Total Income"
-                            required
-                            className="form-control"
-                            value={(parseInt(this.state.i1) + parseInt(this.state.i2) + parseInt(this.state.i3) + parseInt(this.state.i4))}
-                            onClick={this.total}
-                            onChange={this.onChangeTotalInc}
-                        />
-                    </div>
-                    <h2>Profit or Loss</h2>
-                    <div >
-                        <label for="autoSizingInput">Profit/Loss</label>
-                        <input type="text"
-                            placeholder="Profit or Lost"
-                            required
-                            className="form-control"
-                            value={(parseInt(this.state.i1) + parseInt(this.state.i2) + parseInt(this.state.i3) + parseInt(this.state.i4)) - (parseInt(this.state.e1) + parseInt(this.state.e2) + parseInt(this.state.e3) + parseInt(this.state.e4))}
-                            onChange={this.onChangeProfLst}
-                        />
-                    </div>
+                            <div >
+                                <label for="autoSizingInput">Grand Total of All Income</label>
+                                <input type="text"
+                                    placeholder="Grand Total Income"
+                                    required
+                                    className="form-control"
+                                    value={(parseInt(this.state.i1) + parseInt(this.state.i2) + parseInt(this.state.i3) + parseInt(this.state.i4))}
+                                    onClick={this.total}
+                                    onChange={this.onChangeTotalInc}
+                                />
+                            </div>
+                            <br /><br />
+                            <h2>Profit or Loss</h2>
+                            <br />
+                            <div >
+                                <label for="autoSizingInput">Profit/Loss</label>
+                                <input type="text"
+                                    placeholder="Profit or Lost"
+                                    required
+                                    className="form-control"
+                                    value={(parseInt(this.state.i1) + parseInt(this.state.i2) + parseInt(this.state.i3) + parseInt(this.state.i4)) - (parseInt(this.state.e1) + parseInt(this.state.e2) + parseInt(this.state.e3) + parseInt(this.state.e4))}
+                                    onChange={this.onChangeProfLst}
+                                />
+                            </div>
 
 
-                    <br /> <br />  <br /> <br />
-                    <div >
-                        <a href="/calcFront"><input type="submit" value="Calculate" className="searchStaffBtn" /></a>
-                    </div>
-                </form>
+                            <br />
+                            <div >
+
+                                <a href="http://localhost:5000/Calculations/viewCalc"><input type="submit" value="Calculate" id="calcBtn" className="btn btn-primary" /></a>
+                                <br /><br />
+
+                                <button type="button" onClick={this.submitPost} className="btn btn-primary btn-lg" id="calcBtn2">Genarate</button>
+                            </div>
+
+                        </form>
 
 
-
-            </div>
+                    </div>) : (
+                        <PDF dep1={this.state.dep1} e1={this.state.e1} i1={this.state.i1} dep2={this.state.dep2} e2={this.state.e2} i2={this.state.i2} dep3={this.state.dep3} e3={this.state.e3} i3={this.state.i3} dep4={this.state.dep4} e4={this.state.e4} i4={this.state.i4}
+                            totalExp={(parseInt(this.state.e1) + parseInt(this.state.e2) + parseInt(this.state.e3) + parseInt(this.state.e4))} totalInc={(parseInt(this.state.i1) + parseInt(this.state.i2) + parseInt(this.state.i3) + parseInt(this.state.i4))} ProfLst={(parseInt(this.state.i1) + parseInt(this.state.i2) + parseInt(this.state.i3) + parseInt(this.state.i4)) - (parseInt(this.state.e1) + parseInt(this.state.e2) + parseInt(this.state.e3) + parseInt(this.state.e4))} />
+                    )
+                }
+            </>
         )
     }
 }

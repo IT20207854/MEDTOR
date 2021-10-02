@@ -34,9 +34,9 @@ function ManagePharmacy() {
 
                     </ManagePharmacyCard>
                     <ManagePharmacyCard>
-                        <ManagePharmacyH2>GENERATE EMPLOYEE REPORT</ManagePharmacyH2>
+                        <ManagePharmacyH2>GENERATE PHARMACY REPORT</ManagePharmacyH2>
                         <ManagePharmacyIcon src={generate} />
-                        <h4><NavLink to='/madicines-list'>Continue</NavLink></h4>
+                        <h4><NavLink to='/PharmacyReport'>Continue</NavLink></h4>
 
                     </ManagePharmacyCard>
                 </ManagePharmacyWrapper>

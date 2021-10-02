@@ -7,7 +7,6 @@ export const CovidManageContainer = styled.div`
     justify-content: center;
     align-items: center;
     
-
     @media screen and (max-width: 768px){
         height: 1100px;
     }
@@ -27,7 +26,7 @@ export const CovidManageWrapper = styled.div`
         grid-template-columns: 1fr 1fr;
     }
     @media screen and (max-width: 768px){
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
         padding: 0 20px;
     }
 `

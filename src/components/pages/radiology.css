@@ -1,3 +1,137 @@
+.radiologyManageTitle{
+	font-weight: bold;
+	color:black;
+	font-size: 50px;
+}
+
+.addRadiologyPatientTitle{
+	font-size: 50px;
+	text-align: center;
+	color: black;
+	margin: 0;
+	height: 60px;
+}
+
+.viewRadiologyPatientTitle{
+	font-size: 50px;
+	text-align: center;
+	color: black;
+	margin: 0;
+	height: 60px;
+}
+
+.calRadiologyCostTitle{
+	font-size: 45px;
+	text-align: center;
+	color: black;
+	margin: 0;
+	height: 60px;
+}
+
+.searchRadiologyTitle{
+	font-size: 50px;
+	text-align: center;
+	color: black;
+	margin: 0;
+	height: 60px;
+}
+
+.RadiologyCostDetails{
+	font-size: 50px;
+	text-align: center;
+	color: black;
+	margin: 0;
+	height: 60px;
+}
+
+.searchRadiologyTitle{
+	font-size: 50px;
+	text-align: center;
+	color: black;
+	margin: 0;
+	height: 60px;
+}
+
+.searchRadiologyBtn{
+	align-items: left;
+	border-radius: 8px;
+	background-color:rgb(187, 184, 184);
+	height: 40px;
+	width:200px;
+	transition-duration: 0.4s;
+}
+
+.searchRadiologyBtn:hover {
+	background-color: white;
+}
+
+.viewAllRadiologyCostBtn{
+	margin: 20px;
+	border-radius: 8px;
+	background-color:lightcoral;
+	height: 40px;
+	width:240px;
+	transition-duration: 0.4s;
+}
+
+.viewAllRadiologyCostBtn:hover {
+	background-color: white;
+}
+
+.searchRadiologyCostBtn{
+	margin: 25px;
+	border-radius: 8px;
+	background-color:lightcoral;
+	height: 40px;
+	width:240px;
+	transition-duration: 0.4s;
+}
+
+.searchRadiologyCostBtn:hover {
+	background-color: white;
+}
+
+.generateReportBtn{
+	margin: 25px;
+	margin-left: 725px;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	border-radius: 8px;
+	background-color:rgb(26, 23, 23);
+	height: 50px;
+	width:400px;
+	transition-duration: 0.4s;
+}
+
+.generateReportBtn:hover {
+	background-color: white;
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+}
+
+
+.toSearchPage{
+	color:purple;
+	font-weight: bold;
+}
+
+.viewRadiologyDeleteLink{
+	color:red;
+}
+
+.linkToViewRadiologyCost{
+	color: maroon;
+	margin: 20px;;
+	font-weight: bold;
+	width: 200px;
+}
+
+
+
+
+
+
+
 .radiology{
   background-color: #11105e;
   background-size: cover;
@@ -40,6 +174,17 @@
   display: grid;
   max-width: 500px;  
 }
+
+
+#viewradiologyCostForm{
+	opacity: 0.9;
+	padding:80px;
+    margin: 0 auto;
+    display: grid;
+	max-width: 1000px;
+	background-color:salmon;
+}
+
 
 #radb{
   background-color: #071a52;
@@ -97,13 +242,15 @@
 
 }
 .viewRadiologyPatient{
-  background: url("https://image.shutterstock.com/image-photo/doctor-diagnosing-health-on-asthma-260nw-1682639740.jpg") no-repeat center center fixed;
+  background: url("https://www.lalchandanipathlab.com/assets/upload/blogs/1565111048_radiology.jpg") no-repeat center center fixed;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  background-size: cover;
 
 }
 
-.calcCost{
+.calRadiologyCost{
   background: url("https://images.sampletemplates.com/wp-content/uploads/2015/09/Construction-Budget-Samples.jpg") no-repeat center center fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -180,4 +327,49 @@
   color: #d72323;
 }
 
-  
+
+
+.searchRadiologyPage{
+	background: url("https://www.neighborhoodrad.com/wp-content/uploads/2017/11/patient-with-radiologist.jpg") no-repeat center center fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#searchRadiologyForm{
+	max-width: 800px;
+	height:500px;
+	padding: 16px;
+	background-color:peachpuff;
+}
+
+.searchRadiologyCostPage{
+	background: url("https://www.chcf.org/wp-content/uploads/2020/03/Calculator-Medical-Billing-Codes_Card.jpg") no-repeat center center fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#searchRadiologyCostForm{
+	max-width: 700px;
+	height:700px;
+	padding: 16px;
+	background-color: peachpuff;
+}
+
+.searchBar{
+	width:400px;
+}
+
+#btns{
+	left: 10px;
+} 
+
+.radiologyReportPage{
+	background:url('https://i.pinimg.com/originals/b7/cd/5f/b7cd5f4b3eb91bc06ac4f790f019b323.jpg');
+}
+
+.radiologyReportTitle{
+	color:rgb(7, 7, 82);
+}
+

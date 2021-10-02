@@ -40,6 +40,7 @@ const madicinesRouter = require('./routes/madicines');
 const exercisesRouter = require('./routes/exercises');
 
 const radiologyRouter = require('./routes/radiology');
+const transportRouter = require('./routes/transport');
 const radiologyCostRouter = require('./routes/radiologyCost');
 
 app.use('/staff', staffRouter);
@@ -64,6 +65,7 @@ app.use('/madicines', madicinesRouter);
 app.use('/exercises', exercisesRouter);
 
 app.use('/radiology', radiologyRouter);
+app.use('/transport', transportRouter);
 app.use('/radiologyCost', radiologyCostRouter);
 
 app.use('/users', require('./routes/auth'));

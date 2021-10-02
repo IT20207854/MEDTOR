@@ -15,12 +15,12 @@ export const ManageChannelContainer = styled.div`
     }
 `
 export const ManageChannelWrapper = styled.div`
-    max-width: 670px;
+    max-width: 1125px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
-    grid-gap: 60px;
+    grid-gap: 30px;
     padding: 0 50px;
     @media screen and (max-width: 1000px) {
         grid-template-columns: 1fr 1fr;
@@ -38,8 +38,9 @@ export const ManageChannelCard = styled.div`
     justify-content: flex-start;
     align-items: center;
     border-radius: 10px;
+   
     max-height: 340px;
-    padding: 60px;
+    padding: 45px;
     box-shadow: 0 1px 3px rgba(0,0,0,0,2);
     transition: all 0.2s ease-in-out;
     &:hover{ 
