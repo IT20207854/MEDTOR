@@ -1,13 +1,15 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import './patient.css';
+import { Link, Redirect } from "react-router-dom";
 
 
 export default class ChargeCalculate extends Component {
   constructor(props) {
     super(props);
-
+    this.onChangeDateOfCharge = this.onChangeDateOfCharge.bind(this);
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeRoomWard = this.onChangeRoomWard.bind(this);
     this.onChangeWardChargePerDay = this.onChangeWardChargePerDay.bind(this);
@@ -17,6 +19,7 @@ export default class ChargeCalculate extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
+      dateofcharge: new Date(),
       name: '',
       roomward: '',
       wardChargePerDay: '',
@@ -25,6 +28,12 @@ export default class ChargeCalculate extends Component {
       totalCharge: '',
 
     }
+  }
+
+  onChangeDateOfCharge(date) {
+    this.setState({
+      dateofcharge: date
+    })
   }
 
   onChangeName(e) {
@@ -68,6 +77,7 @@ export default class ChargeCalculate extends Component {
     e.preventDefault();
 
     const charge = {
+      dateofcharge: this.state.dateofcharge,
       name: this.state.name,
       roomward: this.state.roomward,
       wardChargePerDay: this.state.wardChargePerDay,
@@ -90,11 +100,23 @@ export default class ChargeCalculate extends Component {
   render() {
     return (
       <div className="ChargeCalculate">
-        <br />
+        <div className="searchButton">
+          <button className="viewAllChargeBtn"><Link className="linkToViewCharge" to="/viewCharge">View All Charge Details</Link></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button className="searchChargeBtn"><Link className="linkToViewCharge" to="/SearchPatientCharge">Search Charge Details</Link></button></div>
+        <br></br>
+
         <form onSubmit={this.onSubmit}>
 
           <div className="form-calculation">
             <h5 className="patientCharge">PATIENT CHARGE CALCULATION</h5><br></br><br></br>
+            <label><b>Date: </b></label>
+            <div>
+              <DatePicker
+                selected={this.state.dateofcharge}
+                onChange={this.onChangeDateOfCharge}
+              />
+            </div><br></br><br></br>
+
             <label><b>Patient Name: </b></label>
             <input type="text"
               required
@@ -127,7 +149,6 @@ export default class ChargeCalculate extends Component {
               <option>3000</option>
               <option selected disabled value="">None</option>
               <option>0</option>
-
             </select>
           </div>
 
@@ -155,12 +176,12 @@ export default class ChargeCalculate extends Component {
             <h9>
               <select required value={this.state.noOfDays} onChange={this.onChangeNoOfDays} >
                 <option selected disabled value="">Select</option>
-
                 <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option>
                 <option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
                 <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
               </select></h9><br></br><br></br>
           </div>
+
           <div className="form-calculation">
             <label><b>Total Charge: </b></label>
             <input
@@ -178,7 +199,7 @@ export default class ChargeCalculate extends Component {
           </div>
 
           <div className="form-btn">
-            <input type="submit" value="GENERATE REPORT" className="btn btn-primary" id="bdatabase" onClick={this.getTotal} /><br></br>
+            <button className="btn btn-primary" id="bdatabase"><Link className="topatientReportPage" to="/patientReport" >GENERATE REPORT</Link></button>
           </div>
 
         </form>

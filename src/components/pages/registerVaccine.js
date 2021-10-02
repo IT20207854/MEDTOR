@@ -184,9 +184,9 @@ export default class RegisterVaccine extends Component {
                             <label className="textColour">NIC: </label>
                             <input
                                 type="text"
-                                className="form-control"
                                 maxLength="10"
                                 minLength="10"
+                                className="form-control"
                                 value={this.state.nic}
                                 onChange={this.onChangeNIC}
                                 placeholder="Enter NIC number"
@@ -196,6 +196,7 @@ export default class RegisterVaccine extends Component {
                             <label className="textColour">Phone: </label>
                             <input
                                 type="text"
+                                pattern="[0-9]*"
                                 maxLength="10"
                                 minLength="10"
                                 className="form-control"
@@ -212,6 +213,28 @@ export default class RegisterVaccine extends Component {
                                 value={this.state.email}
                                 onChange={this.onChangeEmail}
                                 placeholder="Enter email address"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label className="textColour">Username: </label>
+                            <div>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={this.state.username}
+                                    onChange={this.onChangeUsername}
+                                    placeholder="Enter username"
+                                />
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <label className="textColour">Password: </label>
+                            <input
+                                type="password"
+                                className="form-control"
+                                value={this.state.password}
+                                onChange={this.onChangePassword}
+                                placeholder="Enter password"
                             />
                         </div>
                         <br />

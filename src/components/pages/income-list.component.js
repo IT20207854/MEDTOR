@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../FinanceManagement/financeManage.css';
+//import './financeManage.css';
 
 const Income = props => (
     <tr>
@@ -38,6 +38,7 @@ export default class IncomeList extends Component {
         axios.delete('http://localhost:5000/income/' + id)
             .then(res => console.log(res.data));
 
+        alert("Are you sure you want to delete the income details from the system?")
         this.setState({
             income: this.state.income.filter(sml => sml._id !== id)
         })
@@ -53,6 +54,7 @@ export default class IncomeList extends Component {
     render() {
         return (
             <div className='viewInc'>
+                <button className="searchExpBtn"><Link className="toSearchPage" to="./SearchIncome" >Search Income</Link></button>
                 <br />
                 <div className='head'>
                     <h3>Income Deatils</h3>

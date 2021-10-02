@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../FinanceManagement/financeManage.css';
+//import './financeManage.css';
+
 
 const Expenses = props => (
     <tr>
@@ -25,6 +26,7 @@ export default class ExpensesList extends Component {
         this.state = { expenses: [] };
     }
 
+    //get data from database
     componentDidMount() {
         axios.get('http://localhost:5000/expenses/')
             .then(response => {
@@ -39,6 +41,8 @@ export default class ExpensesList extends Component {
         axios.delete('http://localhost:5000/expenses/' + id)
             .then(res => console.log(res.data));
 
+        alert("Are you sure you want to delete the expenses details from the system?")
+        //delete the row in table    
         this.setState({
             expenses: this.state.expenses.filter(sml => sml._id !== id)
         })
@@ -54,7 +58,8 @@ export default class ExpensesList extends Component {
     render() {
         return (
             <div className='viewExp'>
-                <h3>Expenses Details</h3>
+                <button className="searchExpBtn"><Link className="toSearchPage" to="./SearchExpenses" >Search Expenses</Link></button>
+                <h3>Expenses Deatils</h3>
                 <table className="table" className="container">
                     <thead className="thead-light" >
                         <tr>

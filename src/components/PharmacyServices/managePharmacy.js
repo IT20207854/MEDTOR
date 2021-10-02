@@ -28,15 +28,15 @@ function ManagePharmacy() {
 
                     </ManagePharmacyCard>
                     <ManagePharmacyCard>
-                        <ManagePharmacyH2>ADD PATEINT PRESCRIPTION</ManagePharmacyH2>
+                        <ManagePharmacyH2>ADD NEW PATIENT</ManagePharmacyH2>
                         <ManagePharmacyIcon src={addPatient} />
                         <h4><NavLink to='/create-patient'>Continue</NavLink></h4>
 
                     </ManagePharmacyCard>
                     <ManagePharmacyCard>
-                        <ManagePharmacyH2>GENERATE EMPLOYEE REPORT</ManagePharmacyH2>
+                        <ManagePharmacyH2>GENERATE PHARMACY REPORT</ManagePharmacyH2>
                         <ManagePharmacyIcon src={generate} />
-                        <h4><NavLink to='/madicines-list'>Continue</NavLink></h4>
+                        <h4><NavLink to='/PharmacyReport'>Continue</NavLink></h4>
 
                     </ManagePharmacyCard>
                 </ManagePharmacyWrapper>

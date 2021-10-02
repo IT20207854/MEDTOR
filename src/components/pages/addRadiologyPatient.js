@@ -27,189 +27,188 @@ export default class AddRadiologyPatient extends Component {
       age: '',
       gender: '',
       testingname: '',
-    }
   }
-  onChangePatientName(e) {
+}
+onChangePatientName(e) {
     this.setState({
-      patientname: e.target.value
+        patientname: e.target.value
     });
   }
-
+  
   onChangeNIC(e) {
     this.setState({
-      nic: e.target.value
+        nic: e.target.value
     });
   }
 
-  onChangeEmail(e) {
-    this.setState({
+onChangeEmail(e) {
+  this.setState({
       email: e.target.value
-    });
-  }
+  });
+}
 
-  onChangeAddress(e) {
-    this.setState({
+onChangeAddress(e) {
+  this.setState({
       address: e.target.value
-    });
-  }
+  });
+}
 
-  onChangeMobileNumber(e) {
-    this.setState({
+onChangeMobileNumber(e) {
+  this.setState({
       mobilenumber: e.target.value
-    });
-  }
+  });
+}
 
-  onChangeAge(e) {
-    this.setState({
-      age: e.target.value
-    });
-  }
+onChangeAge(e) {
+  this.setState({
+     age: e.target.value
+  });
+}
 
-  onChangeGender(e) {
-    this.setState({
-      gender: e.target.value
-    });
-  }
+onChangeGender(e) {
+this.setState({
+   gender: e.target.value
+});
+}
 
 
-  onChangeTestingName(e) {
-    this.setState({
+onChangeTestingName(e) {
+  this.setState({
       testingname: e.target.value
-    });
-  }
+  });
+}
 
-  onSubmit(e) {
-    e.preventDefault();
+onSubmit(e) {
+  e.preventDefault();
 
-    let g = document.getElementById("Gender").value;
+  let g = document.getElementById("Gender").value;
 
-    console.log(g);
+  console.log(g);
 
-    this.setState({
-      gender: g
-    });
+  this.setState({
+    gender: g
+ });
 
-    const radiology = {
-      patientname: this.state.patientname,
-      nic: this.state.nic,
-      email: this.state.email,
-      address: this.state.address,
-      mobilenumber: this.state.mobilenumber,
-      age: this.state.age,
-      gender: this.state.gender,
-      testingname: this.state.testingname
-    }
+  const radiology = {
+    patientname: this.state.patientname,
+    nic: this.state.nic,
+    email: this.state.email,
+    address: this.state.address,
+    mobilenumber: this.state.mobilenumber,
+    age: this.state.age,
+    gender: this.state.gender,
+    testingname: this.state.testingname
+}
 
-    console.log(radiology);
+console.log(radiology);
 
-    axios.post('http://localhost:5000/radiology/add', radiology)
-      .then((res) => {
-        console.log(res.data)
-        alert("Patient Added");
+ axios.post('http://localhost:5000/radiology/add', radiology)
+             .then((res)=> {console.log(res.data)
+                alert("Patient Added");
 
+                
+ window.location = '/viewRadiologyPatient'; 
+            
+            });
+             
 
-        window.location = '/viewRadiologyPatient';
-
-      });
-
-
-  }
+}
   render() {
     return (
       <div className='addRadiologyPatient'>
-        <br />
-
-        <div className='container' id="addRadiologyPatientForm">
+      <br />
+     
+      <div className='container' id="addRadiologyPatientForm">
           <h3 className="addRadiologyPatientTitle">ADD RADIOLOGY PATIENT </h3>
           <br />
           <form onSubmit={this.onSubmit}>
-            <div className="form-radiologygroup">
-              <label>PatientName: </label>
-              <input type="text"
-                required
-                className="form-control"
-                value={this.state.patientname}
-                onChange={this.onChangePatientName}
-              />
-            </div>
-            <div className="form-radiologygroup">
-              <label>NIC: </label>
-              <input type="text"
-                required
-                className="form-control"
-                maxLength="10"
-                minLength="10"
-                value={this.state.nic}
-                onChange={this.onChangeNIC}
-              />
-            </div>
-
-            <div className="form-radiologygroup">
-              <label>Email: </label>
-              <input type="text"
-                required
-                className="form-control"
-                value={this.state.email}
-                pattern="[a-z0-9._%+-]+@[a-z0-9]+\.[a-z]{2,3}"
-                onChange={this.onChangeEmail}
-              />
-            </div>
-            <div className="form-radiologygroup">
-              <label>Address: </label>
-              <input type="text"
-                required
-                className="form-control"
-                value={this.state.address}
-                onChange={this.onChangeAddress}
-              />
-            </div>
-            <div className="form-radiologygroup">
-              <label>MobileNumber: </label>
-              <input type="text"
-                required
-                className="form-control"
-                value={this.state.mobilenumber}
-                pattern="[0-9]*"
-                maxLength="10"
-                minLength="10"
-                onChange={this.onChangeMobileNumber}
-              />
-            </div>
-            <div className="form-radiologygroup">
-              <label>Age: </label>
-              <input type="text"
-                required
-                className="form-control"
-                value={this.state.age}
-                onChange={this.onChangeAge}
-              />
-            </div>
-            <div className="form-radiologygroup">
+              <div className="form-radiologygroup">
+                  <label>PatientName: </label>
+                  <input type="text"
+                      required
+                      className="form-control"
+                      value={this.state.patientname}
+                      onChange={this.onChangePatientName}
+                  />
+              </div>
+              <div className="form-radiologygroup">
+                  <label>NIC: </label>
+                  <input type="text"
+                      required
+                      className="form-control"
+                      maxLength="10"
+                      minLength="10"
+                      value={this.state.nic}
+                      onChange={this.onChangeNIC}
+                  />
+              </div>
+             
+              <div className="form-radiologygroup">
+                  <label>Email: </label>
+                  <input type="text"
+                      required
+                      className="form-control"
+                      value={this.state.email}
+                      pattern ="[a-z0-9._%+-]+@[a-z0-9]+\.[a-z]{2,3}"
+                      onChange={this.onChangeEmail}
+                  />
+              </div>
+              <div className="form-radiologygroup">
+                  <label>Address: </label>
+                  <input type="text"
+                      required
+                      className="form-control"
+                      value={this.state.address}
+                      onChange={this.onChangeAddress}
+                  />
+              </div>
+              <div className="form-radiologygroup">
+                  <label>MobileNumber: </label>
+                  <input type="text"
+                      required
+                      className="form-control"
+                      value={this.state.mobilenumber}
+                      pattern ="[0-9]*"
+                      maxLength="10"
+                      minLength="10"
+                      onChange={this.onChangeMobileNumber}
+                  />
+              </div>
+              <div className="form-radiologygroup">
+                  <label>Age: </label>
+                  <input type="text"
+                      required
+                      className="form-control"
+                      value={this.state.age}
+                      onChange={this.onChangeAge}
+                  />
+              </div>
+              <div className="form-radiologygroup">
               <label>Gender:
-                <select id="Gender" value={this.state.gender}
-                  onChange={this.onChangeGender}>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
+                   <select id ="Gender" value={this.state.gender}
+                       onChange={this.onChangeGender}>
+                       <option value="Male">Male</option>
+                       <option value="Female">Female</option>
+                    </select>
               </label>
-            </div>
-            <div className="form-radiologygroup">
-              <label>TestingName: </label>
-              <input type="text"
-                required
-                className="form-control"
-                value={this.state.testingname}
-                onChange={this.onChangeTestingName}
-              />
-            </div>
-            <br />
-            <div className="form-radiologygroup">
-              <input type="submit" value="ADD RADIOLOGY PATIENT" className="btn btn-primary" />
+             </div>
+              <div className="form-radiologygroup">
+                  <label>TestingName: </label>
+                  <input type="text"
+                      required
+                      className="form-control"
+                      value={this.state.testingname}
+                      onChange={this.onChangeTestingName}
+                  />
+              </div>
               <br />
-            </div>
+              <div className="form-radiologygroup">
+                  <input type="submit" value="ADD RADIOLOGY PATIENT" className="btn btn-primary" />
+                  <br />
+              </div>
           </form>
-        </div>
       </div>
-    )
+  </div>
+)
+    }
   }
-}

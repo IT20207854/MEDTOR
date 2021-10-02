@@ -2,7 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './manageChannel.css';
 import viewapp from '../../images/viewapp.jpg';
-import Addap from '../../images/Addap.jpg'
+import Addap from '../../images/Addap.jpg';
+import ChReport from '../../images/reportch.jpg';
 import { ManageChannelContainer, ManageChannelH1, ManageChannelWrapper, ManageChannelCard, ManageChannelIcon, ManageChannelH2 } from './manageChannelElement'
 
 
@@ -26,8 +27,15 @@ function ManageChannel() {
                         <h5><NavLink to='/viewChannel'>Continue</NavLink></h5>
 
                     </ManageChannelCard>
-                    
-                    
+
+                    <ManageChannelCard>
+                        <ManageChannelH2>GENERATE REPORT</ManageChannelH2>
+                        <ManageChannelIcon src={ChReport} />
+                        <h5><NavLink to='/ChannelReport'>Continue</NavLink></h5>
+
+                    </ManageChannelCard>
+
+
                 </ManageChannelWrapper>
             </ManageChannelContainer>
 

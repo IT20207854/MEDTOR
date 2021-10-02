@@ -11,18 +11,18 @@ router.route('/').get((req, res) => {
 
 //create
 router.route('/add').post((req, res) => {
-    const _id = req.body._id;
+
     const patientname = req.body.patientname;
-    const date = Date.parse(req.body.date);;
+    const date = Date(req.body.date);;
     const testingname = req.body.testingname;
-    const scanCost = req.body.scanCost;
-    const noOfScans = req.body.noOfScans;
-    const totalCost = (scanCost * noOfScans);
+    const scanCost = Number(req.body.scanCost);
+    const noOfScans = Number(req.body.noOfScans);
+    const totalCost = Number(scanCost * noOfScans);
 
 
     const newRadiologyCost = new RadiologyCost({
 
-        _id,
+
         patientname,
         date,
         testingname,
@@ -34,14 +34,14 @@ router.route('/add').post((req, res) => {
     });
 
     newRadiologyCost.save()
-        .then(() => res.json('New radiologyCost entry added.\n Total RadiologyCost of patient: ' + totalRadiologyCost))
+        .then(() => res.json('New radiologyCost entry added'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
 //retrieve function 
 router.route('/:id').get((req, res) => {
     RadiologyCost.findById(req.params.id)
-        .then(radiologyCost => res.json("Patient ID: " + radiologyCost._id + "\n" + "Patient name: " + radiologyCost.name + "\n" + "Total RCost: " + cost.totalCost))
+        .then(radiologyCost => res.json("Patient ID: " + radiologyCost._id + "\n" + "Patient name: " + radiologyCost.name + "\n" + "Total RadiologyCost: " + radiologyCost.totalRadiologyCost))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -56,6 +56,7 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
     RadiologyCost.findById(req.params.id)
         .then(radiologyCost => {
+
             radiologyCost._id = req.body._id;
             radiologyCost.patientname = req.body.patientname;
             radiologyCost.date = Date.parse(req.body.date);

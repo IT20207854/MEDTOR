@@ -5,17 +5,17 @@ const Schema = mongoose.Schema;
 
 const radiologyCostSchema = new Schema({
 
-    _id: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true
+    // _id: {
+    //     type: String,
+    //     required: true,
+    //     unique: true,
+    //     trim: true
 
-    },
+    // },
     patientname: {
         type: String,
         required: true,
-        unique: true,
+    
         trim: true
 
     },
@@ -27,7 +27,7 @@ const radiologyCostSchema = new Schema({
     testingname: {
         type: String,
         required: true,
-        unique: true,
+        
         trim: true
     },
 

@@ -15,7 +15,7 @@ const Radiology = props => (
         <td>{props.radiology.gender}</td>
         <td>{props.radiology.testingname}</td>
     <td>
-    <Link to={"/editRadiologyPatient/" + props.radiology._id}>edit</Link> | <a href="#" onClick={() => { props.deleteRadiology(props.radiology._id) }}>delete</a>
+    <Link to={"/editRadiologyPatient/" + props.radiology._id}>edit</Link> | <a href="#" className="viewRadiologyDeleteLink" onClick={() => { props.deleteRadiology(props.radiology._id) }}>delete</a>
     </td>
   </tr>
 )
@@ -43,6 +43,7 @@ export default class ViewRadiologyPatient extends Component {
     axios.delete('http://localhost:5000/radiology/'+id)
       .then(response => { console.log(response.data)});
 
+  
     this.setState({
       radiology: this.state.radiology.filter(el => el._id !== id)
     })
@@ -56,8 +57,14 @@ export default class ViewRadiologyPatient extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h3>Radiology and Imaging</h3>
+      <div className='viewRadiologyPatientPage'>
+        <br />
+
+      <div className="container" id="viewRadiologyPatientForm">
+                    <button className="searchRadiologyBtn"><Link className="toSearchPage" to="/searchRadiology" >Search Patient</Link></button>
+                    <h3 className="viewRadiologyPatientTitle">RADIOLOGY AND IMAGING PATIENT</h3>
+                    <br />
+
         <table className="table">
           <thead className="thead-light">
             <tr>
@@ -75,7 +82,7 @@ export default class ViewRadiologyPatient extends Component {
             { this.radiologyList() }
           </tbody>
         </table>
-
+        </div>
       </div>
     )
   }
