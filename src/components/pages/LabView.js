@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
+//import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -9,7 +10,7 @@ const Lab = props => (
     <td>{props.lab.testdate}</td>
     <td>{props.lab.mobilenumber}</td>
     <td>{props.lab.testtype}</td>
-    
+
     <td>
       <Link to={"/editLab/" + props.lab._id}>VIEW</Link> &nbsp;&nbsp;| &nbsp;&nbsp; <a href="#" id="buttonlab" onClick={() => { props.deleteLab(props.lab._id) }}>DELETE</a>
     </td>
@@ -44,7 +45,7 @@ export default class LabView extends Component {
     })
     alert("Delete Patient Details?")
   }
-  
+
 
   LabView() {
     return this.state.lab.map(currentlab => {
@@ -55,7 +56,11 @@ export default class LabView extends Component {
   render() {
     return (
       <div className="LabView">
-        <h3 className="viewlabTital">Lab Details</h3><br/><br/>
+        <br /><td /><tr />
+        <div id="searchbtn">
+          <button className="searchLabBtn"><Link className="toSearchPage" to="/searchLab" >Search Lab</Link></button></div>
+        <h3 className="viewlabTital">Lab Details</h3><br /><br />
+
         <table className="table" className="container">
           <thead className="thead-light">
             <tr>

@@ -59,7 +59,9 @@ export default class PatientList extends Component {
 
   render() {
     return (
-      <div className="PatientList">
+      <div className="PatientList"><br /><br />
+        <div className="searchButton">
+          <button className="searchPatientBtn" ><Link className="toSearchPatientPage" to="/SearchPatient" >Search Patient</Link></button></div>
 
         <h2 className="admitPatientTitle">Patient List</h2><br></br><br></br>
         <table id="table" className="container">
