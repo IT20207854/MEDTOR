@@ -90,6 +90,31 @@ export default class AddStaff extends Component {
 
     }
 
+    addStaffDemo = () => {
+        this.setState({
+            _id: "D1010"
+        });
+        this.setState({
+            name: "Amanda Perera"
+        });
+        this.setState({
+            department: "Medical"
+        });
+        this.setState({
+            nic: "9712345672"
+        });
+        this.setState({
+            gender: "Female"
+        });
+        this.setState({
+            phone: "0771234567"
+        });
+        this.setState({
+            email: "amanda@gmail.com"
+        });
+
+    }
+
 
     render() {
         return (
@@ -177,11 +202,14 @@ export default class AddStaff extends Component {
                         </div>
 
                         <br />
+
                         <div className="form-group">
+
                             <input id="registerEmpBtn" type="submit" value="REGISTER EMPLOYEE" className="btn btn-primary" />
                             <br />
                         </div>
                     </form>
+                    <button onClick={this.addStaffDemo} className="calcSalaryDemo">Demo</button>
                 </div>
             </div>
         )

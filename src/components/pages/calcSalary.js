@@ -113,6 +113,34 @@ export default class CalcSalary extends Component {
         window.location = '/viewSalary'
     }
 
+    calcSalaryDemo = () => {
+        this.setState({
+            _id: "D1010"
+        });
+        this.setState({
+            name: "Amanda Perera"
+        });
+        this.setState({
+            basicSalary: 100000
+        });
+        this.setState({
+            otHours: 2
+        });
+        this.setState({
+            otPay: 300
+        });
+        this.setState({
+            chanellingFee: 2100
+        });
+        this.setState({
+            noOfAppointments: 35
+        });
+
+
+
+    }
+
+
 
     render() {
         return (
@@ -223,6 +251,7 @@ export default class CalcSalary extends Component {
 
                     </div>
                 </form>
+                <button onClick={this.calcSalaryDemo} className="calcSalaryDemo">Demo</button>
 
 
 
