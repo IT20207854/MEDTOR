@@ -142,7 +142,7 @@
 
 #calcForm{
 	opacity: 0.9;
-	padding:80px;
+	padding:25px;
     margin: 0 auto;
     display: grid;
 	max-width: 1000px;
@@ -276,5 +276,21 @@
 
 .staffReportTitle{
 	color:rgb(7, 7, 82);
+}
+
+#demoBtn{
+	background-color: gold;
+	margin-left: 600px;
+	font-weight: bold;
+	width: 150px;
+	height: 35px;
+}
+
+#demoBtn2{
+	background-color: gold;
+	margin-left: 800px;
+	font-weight: bold;
+	width: 150px;
+	height: 35px;
 }
 
