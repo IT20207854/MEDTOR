@@ -63,6 +63,25 @@ export default class CreateExpenses extends Component {
         window.location = '/expenses-list.component';
     }
 
+    addExpensesDemo = () => {
+        this.setState({
+            _id: "e111"
+        });
+
+        this.setState({
+            type: "patients"
+        });
+
+        this.setState({
+            department: "ssssss"
+        });
+
+        this.setState({
+            Value: 1200
+        });
+
+    }
+
 
     render() {
         return (
@@ -118,6 +137,7 @@ export default class CreateExpenses extends Component {
                         <input type="submit" value="Add Expenses" id="createExpbtn" className="btn btn-primary" />
                     </div>
                 </form>
+                <button onClick={this.addExpensesDemo} className="btn btn-primary" id="">Demo</button>
             </div>
         )
     }

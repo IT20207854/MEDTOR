@@ -123,6 +123,7 @@ export default class AddStaff extends Component {
                 <div className='container' id="addStaffForm">
                     <h3 className="addStaffTitle">ADD NEW STAFF MEMBER</h3>
                     <br />
+                    <button onClick={this.addStaffDemo} className="btn btn-primary" id="demoBtn">Demo</button>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
                             <label>Staff ID: </label>
@@ -209,7 +210,7 @@ export default class AddStaff extends Component {
                             <br />
                         </div>
                     </form>
-                    <button onClick={this.addStaffDemo} className="calcSalaryDemo">Demo</button>
+
                 </div>
             </div>
         )

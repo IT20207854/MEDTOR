@@ -146,111 +146,115 @@ export default class CalcSalary extends Component {
         return (
 
             <div className="calcSalaryPage">
+
                 <button className="viewAllSalaryBtn"><Link className="linkToViewSalary" to="/viewSalary">View All Salary Details</Link></button>
                 <button className="searchSalaryBtn"><Link className="linkToViewSalary" to="/searchSalary">Search Salary Details</Link></button>
-                <form onSubmit={this.onSubmit} className="container" id="calcForm">
-                    <h3 className="calcSalaryTitle">EMPLOYEE SALARY CALCULATION</h3>
-                    <br />
-                    <div className="form-group">
-                        <label>Date: </label>
+                <div className="container" id="calcForm">
+                    <button onClick={this.calcSalaryDemo} className="btn btn-primary" id="demoBtn2">Demo</button>
+                    <form onSubmit={this.onSubmit}>
+                        <h3 className="calcSalaryTitle">EMPLOYEE SALARY CALCULATION</h3>
+                        <br />
+                        <div className="form-group">
+                            <label>Date: </label>
+                            <div>
+                                <DatePicker
+                                    selected={this.state.date}
+                                    onChange={this.onChangeDate}
+                                />
+                            </div>
+                            <br />
+                        </div>
+                        <div className="form-group">
+                            <label>Employee ID: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                value={this.state._id}
+                                onChange={this.onChangeID}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Name: </label>
+                            <input type="text"
+                                required
+                                className="form-control"
+                                value={this.state.name}
+                                onChange={this.onChangeName}
+                            />
+                        </div>
+
+                        <br />
+                        <div className="form-group">
+                            <label>Basic Salary:<br />  </label>
+                            <select
+                                value={this.state.basicSalary}
+                                onChange={this.onChangeBasicSalary}>
+                                <option selected disabled value="">Select</option>
+                                <option disabled>Doctor</option>
+                                <option value="100000">100000</option>
+                                <option disabled>Nurse</option>
+                                <option value="75000">75000</option>
+                                <option disabled>Management Staff</option>
+                                <option value="60000">60000</option>
+                                <option disabled>Minor Staff</option>
+                                <option value="35000">35000</option>
+                            </select>
+
+                        </div>
+                        <br />
+                        <div className="form-group">
+                            <label>OT Hours: </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                value={this.state.otHours}
+                                onChange={this.onChangeOTHours}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>OT Pay: </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                value={this.state.otPay}
+                                onChange={this.onChangeOTPay}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Chanelling Fee: </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                value={this.state.chanellingFee}
+                                onChange={this.onChangeChanellingFee}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Number of Appointments: </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                value={this.state.noOfAppointments}
+                                onChange={this.onChangeNoOfAppointments}
+                            />
+                        </div>
+                        <label>Total Salary: </label>
                         <div>
-                            <DatePicker
-                                selected={this.state.date}
-                                onChange={this.onChangeDate}
+                            <input
+                                type="text"
+                                className="form-control"
+                                value={(parseInt(this.state.basicSalary * 1) + (this.state.otHours * this.state.otPay) + (this.state.chanellingFee * this.state.noOfAppointments))}
+                                onClick={this.getTotal}
                             />
                         </div>
                         <br />
-                    </div>
-                    <div className="form-group">
-                        <label>Employee ID: </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state._id}
-                            onChange={this.onChangeID}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Name: </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.name}
-                            onChange={this.onChangeName}
-                        />
-                    </div>
+                        <div className="form-group">
+                            <input type="submit" value="Add to Database" className="btn btn-primary" onClick={this.getTotal} />
+                            <br />
 
-                    <br />
-                    <div className="form-group">
-                        <label>Basic Salary:<br />  </label>
-                        <select
-                            value={this.state.basicSalary}
-                            onChange={this.onChangeBasicSalary}>
-                            <option selected disabled value="">Select</option>
-                            <option disabled>Doctor</option>
-                            <option value="100000">100000</option>
-                            <option disabled>Nurse</option>
-                            <option value="75000">75000</option>
-                            <option disabled>Management Staff</option>
-                            <option value="60000">60000</option>
-                            <option disabled>Minor Staff</option>
-                            <option value="35000">35000</option>
-                        </select>
-
-                    </div>
-                    <br />
-                    <div className="form-group">
-                        <label>OT Hours: </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={this.state.otHours}
-                            onChange={this.onChangeOTHours}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>OT Pay: </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={this.state.otPay}
-                            onChange={this.onChangeOTPay}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Chanelling Fee: </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={this.state.chanellingFee}
-                            onChange={this.onChangeChanellingFee}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Number of Appointments: </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={this.state.noOfAppointments}
-                            onChange={this.onChangeNoOfAppointments}
-                        />
-                    </div>
-                    <label>Total Salary: </label>
-                    <div>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={(parseInt(this.state.basicSalary * 1) + (this.state.otHours * this.state.otPay) + (this.state.chanellingFee * this.state.noOfAppointments))}
-                            onClick={this.getTotal}
-                        />
-                    </div>
-                    <br />
-                    <div className="form-group">
-                        <input type="submit" value="Add to Database" className="btn btn-primary" onClick={this.getTotal} />
-                        <br />
-
-                    </div>
-                </form>
+                        </div>
+                    </form>
+                </div>
                 <button onClick={this.calcSalaryDemo} className="calcSalaryDemo">Demo</button>
 
 
